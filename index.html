@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
+    <base href="index.html">
     <title>Българска ветеринарна радиология</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style type="text/css">
-        header {
-            background-color: rgba(223, 217, 197, 0.4);
-            padding: 0.5rem;
+        body > header {
+            background-image: url("stoynov-3-blur.jpg");
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        body > footer {
+            background-image: url("stoynov-3-blur.jpg");
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        body > footer p {
+            color: #7c7b7b;
+            font-size: 0.8rem;
+            text-align: center;
+            text-shadow: #fff 0 0 5px;
+        }
+        body > footer p a {
+            color: #03003b98;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.6);
         }
 
         #hero {
@@ -18,20 +45,20 @@
             background-position: center;
             color: white;
             text-align: center;
-            padding: 4rem;
+            padding: calc(var(--pico-spacing) * 3) calc(var(--pico-spacing) * 5);
         }
     </style>
 </head>
 <body>
-    <header class="container-fluid">
-        <nav>
+    <header>
+        <nav class="container">
             <ul>
-                <li><strong>Българска ветеринарна радиология</strong></li>
+                <li><a href="/"><img src="bvr.jpg" alt="Българска ветеринарна радиология" class="logo"></a></li>
             </ul>
             <ul>
-                <li><a href="#">Екип</a></li>
-                <li><a href="#">Услуги и цени</a></li>
-                <li><button class="secondary">Заявете разчитане</button></li>
+                <li><a href="/#team">Екип</a></li>
+                <li><a href="/#prices">Цени</a></li>
+                <li><a href="/#request" role="button" class="secondary">Заявете разчитане</a></li>
             </ul>
         </nav>
     </header>
@@ -42,17 +69,17 @@
                 <p>Дистанционно разчитане на образно-диагностични изследвания в сферата на
                 ветеринарната медицина.</p>
                 <p>
-                    <button class="primary">Заявете разчитане</button>
-                    или <a href="#">вижте повече</a>
+                    <a href="#request" role="button" class="primary">Заявете разчитане</a>
+                    или <a href="#more">вижте повече</a> ↓
                 </p>
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" id="more">
             <h2>За платформата</h2>
 
             <p>
-                "Българска ветеринарна радиология" e първата в България платформа за дистанционно разчитане на образно-диагностични изследвания в сферата на ветеринарната медицина.
+                Българска ветеринарна радиология e първата в България платформа за дистанционно разчитане на образно-диагностични изследвания в сферата на ветеринарната медицина.
             </p>
 
             <p>
@@ -64,8 +91,11 @@
             </p>
         </section>
 
-        <img src="stoynov-2.jpg" alt="Д-р Филип Стойнов">
-        <section class="container">
+        <section>
+            <p><img src="stoynov-2.jpg" alt="Д-р Филип Стойнов"></p>
+        </section>
+
+        <section class="container" id="team">
             <h2>Екип</h2>
             <p>Д-р Филип Стойнов е основател на Българска ветеринарна радиология.</p>
 
@@ -74,7 +104,7 @@
             <p>Част е от програма за специализация по образна диагностика към университета в Люксембург. Посетил е множество курсове в страната и чужбина. Член на Европейската асоциация по ветеринарна образна диагностика, пълноправен член след успешно положен изпит на Немската организация за контрол на генетично предавани болести на опорно двигателната система (GRSK), упълномощена от FCI да издава сертификати за тазобедрена и лакътна дисплазия, нужни за развъждане на животни с родословие. Преминава едномесечен стаж в клиника San Marco, Italy - единствената ветеринарна клиника, която разполага с т.нар. dual source CT скенер, под ръководството на Джована Бертолини - Doctor Europaeus на ветеринарномедицинските науки и водещ специалист в компютърната томография. Клиничен и научен интерес има в компютърната томография и по-специално заболяванията на гръбначния стълб и вродените съдовите аномалии.</p>
         </section>
 
-        <section class="container">
+        <section class="container" id="prices">
             <h2>Услуги и цени</h2>
             <ul>
                 <li>Описание на рентгенография (една или повече) - 50 лв.</li>
@@ -83,22 +113,93 @@
             </ul>
         </section>
 
-        <section class="container">
-            <h2>Условия и въпроси</h2>
-            <p>Описанията се изготвят и изпращат в <b>тридневен срок</b> след потвърждение за получаването им. За спешни случай,
-                моля отбележете в имейла.</p>
-            
-            <p>Всички описания се заплащат предварително.</p>
-
-            <p><b>Не приемаме образи от ехографско /ултразвуково/ изследване.</b> Ехографията е диагностичен метод, който в най-голяма степен зависи от уменията на ехографиста и техническите характеристики на машината. (т.нар. operator & machine dependent метод). Това прави трудно разчитането на образи от ехографско изследване, увеличава шанса важна информация да бъде пропусната и това да доведе до грешно поставена диагноза.</p>
-
-            <p>Освен образно-диагностични изследвания, можете да ни изпратите всички параклинични изследвания, протоколи от проведени прегледи, снимков и видеоматериал, ако ще бъде полезен за достигане до крайна диагноза.</p>
+        <section class="container" id="terms">
+            <h2>Условия</h2>
+            <ol>
+                <li>Описанията се изготвят и изпращат в <b>тридневен срок</b> след потвърждение за получаването им. За спешни случаи,
+                    моля отбележете в заявката.</li>
+                <li>Всички описания се заплащат предварително, по банков път.</li>
+                <li><b>Не приемаме образи от ехографско /ултразвуково/ изследване.</b> Ехографията е диагностичен метод, който в най-голяма степен зависи от уменията на ехографиста и техническите характеристики на машината. (т.нар. operator & machine dependent метод). Това прави трудно разчитането на образи от ехографско изследване, увеличава шанса важна информация да бъде пропусната и това да доведе до грешно поставена диагноза.</li>
+                <li>Освен образно-диагностични изследвания, можете да ни изпратите всички параклинични изследвания, протоколи от проведени прегледи, снимков и видеоматериал, ако ще бъде полезен за достигане до крайна диагноза.</li>
+            </ol>
         </section>
 
-        <section class="container">
+        <section class="container" id="request">
             <h2>Заявка за разчитане</h2>
-            <p>Изпратете заявката си на bulgarianveterinaryradiology@gmail.com, с линк към предварително качените файлове и документи в платформата wetransfer.com.</p>
+
+            <div class="grid">
+                <form action="mailto:bulgarianveterinaryradiology@gmail.com?subject=Заявка%20за%20разчитане" method="post" enctype="text/plain">
+                    <fieldset>
+                        <label>
+                            Вашите имена:
+                            <input type="text" name="name" placeholder="Име и фамилия..." required />
+                        </label>
+    
+                        <fieldset>
+                            <label>Тип услуга:</label>
+                            <label>
+                                <input type="radio" name="service" value="X-Ray" required />
+                                Описание на рентгенография (една или повече) - 50 лв.
+                            </label>
+                            <label>
+                                <input type="radio" name="service" value="CT" required />
+                                Описание на компютърна томография - 150 лв.
+                            </label>
+                            <label>
+                                <input type="radio" name="service" value="NMR" required />
+                                Описание на магнитен резонанс - 200 лв.
+                            </label>
+                        </fieldset>
+    
+                        <label>
+                            WeTransfer линк:
+                            <input type="url" name="files_url" placeholder="https://we.tl/..." required />
+                            <small>Отворете <a href="https://wetransfer.com/"
+                                rel="noreferrer,nofollow" target="_blank">wetransfer.com</a>, изберете от менюто "More options" опцията "Create link" и посочете валидност от 7 дни.</small>
+                        </label>
+    
+                        <label>
+                            <input type="checkbox" name="urgent" value="yes" />
+                            Спешен случай?
+                        </label>
+    
+                        <label>
+                            <input type="checkbox" name="terms" value="agreed" required />
+                            Съгласявам се с <a href="#terms">условията</a> на услугата.
+                        </label>
+                    </fieldset>
+                    
+                    <input type="submit" value="Изпрати заявката" />
+                </form>
+
+                <article>
+                    <p>За да направите заявка за разчитане, следвайте стъпките по-долу:</p>
+                    <ol>
+                        <li>Качете файловете с изследванията в платформата <a href="https://wetransfer.com/" target="_blank"
+                                rel="noreferrer,nofollow">wetransfer.com</a>, като изберете от менюто "More options" опцията "Create link" и
+                            посочите валидност от 7 дни.</li>
+                        <li>Изпратете попълнен формуляра на заявката за разчитане на образно-диагностични изследвания по-долу.</li>
+                        <li>Заплатете цената на разчитането по банков път.</li>
+                        <li>Ние ще се свържем с Вас, за да ви предоставим резултатите от разчитането.</li>
+                    </ol>
+                </article>
+            </div>
         </section>
     </main>
+    <footer id="contacts">
+        <div class="container">
+            <p>
+                <a href="tel:+359878111259">+359 87 811 1259</a> |
+                <a href="mailto:bulgarianveterinaryradiology@gmail.com">Email</a> |
+                <a href="https://www.facebook.com/BulVetRad">Facebook</a>
+            </p>
+            <p>
+                БЪЛГАРСКА ВЕТЕРИНАРНА РАДИОЛОГИЯ ЕООД<br>
+                ЕИК/ЗДДС №: BG208040842<br>
+                София, ул. Козяк 21<br>
+            </p>
+            <p>&copy; 2019 - 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
