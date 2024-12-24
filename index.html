@@ -133,7 +133,7 @@
             <h2>Заявка за разчитане</h2>
 
             <div class="grid">
-                <form action="mailto:bulgarianveterinaryradiology@gmail.com?subject=Заявка%20за%20разчитане" method="post" enctype="text/plain" accept-charset="utf-8">
+                <form action="mailto:bulgarianveterinaryradiology@gmail.com?subject=Заявка%20за%20разчитане" method="post">
                     <fieldset>
                         <label>
                             Вашите имена:
@@ -222,6 +222,16 @@
             input.addEventListener('change', function () {
                 document.getElementById('reason').textContent = this.nextElementSibling.textContent;
             });
+        });
+        document.querySelector('#request form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var form = new FormData(this);
+            var body = Array.from(form).map(function (pair) {
+                return pair.join(': ');
+            }).join('\n');
+
+            var url = this.action + '&body=' + encodeURIComponent(body);
+            window.location.href = url;
         });
     </script>
 </body>
