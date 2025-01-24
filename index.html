@@ -133,11 +133,16 @@
             <h2>Заявка за разчитане</h2>
 
             <div class="grid">
-                <form action="mailto:office@vetradiology.eu?subject=Заявка%20за%20разчитане" method="post">
+                <form action="/sent.html" method="post" name="request" netlify>
                     <fieldset>
                         <label>
                             Вашите имена:
                             <input type="text" name="name" placeholder="Име и фамилия..." required />
+                        </label>
+
+                        <label>
+                            Вашият имейл адрес:
+                            <input type="email" name="email" placeholder="Имейл адрес..." required />
                         </label>
 
                         <label>
@@ -209,8 +214,7 @@
     </main>
     <footer id="contacts">
         <div class="container">
-            <p>
-                <a href="mailto:office@vetradiology.eu">Email</a> |
+            </sent.html>Email</a>  name="request" netlify>|
                 <a href="https://www.facebook.com/BulVetRad">Facebook</a>
             </p>
             <p>
@@ -227,16 +231,6 @@
             input.addEventListener('change', function () {
                 document.getElementById('reason').textContent = this.nextElementSibling.textContent;
             });
-        });
-        document.querySelector('#request form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var form = new FormData(this);
-            var body = Array.from(form).map(function (pair) {
-                return pair.join(': ');
-            }).join('\n');
-
-            var url = this.action + '&body=' + encodeURIComponent(body);
-            window.location.href = url;
         });
     </script>
 </body>
