@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Българска ветеринарна радиология</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style type="text/css">
+        body > header {
+            background-image: url("stoynov-3-blur.jpg");
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        body > footer {
+            background-image: url("stoynov-3-blur.jpg");
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        body > footer p {
+            color: #7c7b7b;
+            font-size: 0.8rem;
+            text-align: center;
+            text-shadow: #fff 0 0 5px;
+        }
+        body > footer p a {
+            color: #03003b98;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        #hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: calc(var(--pico-spacing) * 3) calc(var(--pico-spacing) * 5);
+        }
+
+        @media screen and (max-width: 500px) {
+            #hero {
+                padding: calc(var(--pico-spacing) * 2) calc(var(--pico-spacing) * 1);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/"><img src="bvr.jpg" alt="Българска ветеринарна радиология" class="logo"></a></li>
+            </ul>
+            <ul>
+                <li><a href="/#team">Екип</a></li>
+                <li><a href="/#prices">Цени</a></li>
+                <li><a href="/#request" role="button" class="secondary">Заявете разчитане</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <h1>Заявката ви е приета!</h1>
+                <p>Ще се свържем с Вас на посочения телефон или имейл адрес.</p>
+                <article>
+                    <p>Напомняме, че е необходимо да заплатите цената на разчитането по банков път на:</p>
+                    <ul>
+                        <li>Получател: <code>Българска ветеринарна радиология</code></li>
+                        <li>IBAN: <code>BG17UBBS80021069884150</code></li>
+                        <li>BIC: <code>UBBSBGSF</code></li>
+                        <li>При банка: <code>Обединена българска банка</code></li>
+                        <li>Основание: <code id="reason">избранта от вас услуга</code></li>
+                    </ul>
+                </article>
+                <p>
+                    <a href="/">← Обратно към началната страница</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer id="contacts">
+        <div class="container">
+            <p>
+                <a href="mailto:office@vetradiology.eu">Email</a> |
+                <a href="https://www.facebook.com/BulVetRad">Facebook</a>
+            </p>
+            <p>
+                БЪЛГАРСКА ВЕТЕРИНАРНА РАДИОЛОГИЯ ЕООД<br>
+                IBAN: BG17UBBS80021069884150<br>
+                ЕИК/ЗДДС №: BG208040842<br>
+                София, ул. Козяк 21<br>
+            </p>
+            <p>&copy; 2019 - 2024</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        document.querySelectorAll('input[name="service"]').forEach(function (input) {
+            input.addEventListener('change', function () {
+                document.getElementById('reason').textContent = this.nextElementSibling.textContent;
+            });
+        });
+        document.querySelector('#request form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var form = new FormData(this);
+            var body = Array.from(form).map(function (pair) {
+                return pair.join(': ');
+            }).join('\n');
+
+            var url = this.action + '&body=' + encodeURIComponent(body);
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>
