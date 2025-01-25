@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Bulgarian Veterinary Radiology</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/en"><img src="../bvr.jpg" alt="Bulgarian Veterinary Radiology" class="logo"></a></li>
+            </ul>
+            <ul>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#prices">Pricing</a></li>
+                <li><a href="#request" role="button" class="secondary">Request a report</a></li>
+                <li><a href="../">BG</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Bulgarian Veterinary Radiology</h1>
+                <p>Remote interpretation of diagnostic imaging in veterinary medicine.</p>
+                <p>
+                    <a href="#request" role="button" class="primary">Request a report</a>
+                    or <a href="#more">learn more</a> ↓
+                </p>
+            </div>
+        </section>
+
+        <section class="container" id="more">
+            <h2>About</h2>
+
+            <p>
+                The first platform in Bulgaria for remote interpretation of diagnostic imaging studies in veterinary medicine.
+                Teleradiology is an extremely useful and popular branch of medicine that enables fast and convenient access to
+                specialists anywhere in the world. Bulgarian Veterinary Radiology (BVR) provides comprehensive
+                descriptions/interpretations of radiographic, computed tomography (CT), and magnetic resonance imaging (MRI) studies.
+            </p>
+
+            <p>
+                Each report includes recommendations for therapy and/or additional diagnostics.
+            </p>
+        </section>
+
+        <section>
+            <p><img src="../stoynov-2.jpg" alt="Dr. Philip Stoynov"></p>
+        </section>
+
+        <section class="container" id="team">
+            <h2>Team</h2>
+            <p>Dr. Filip Stoynov graduated in veterinary medicine from the University of Forestry, Sofia, in 2014.</p>
+
+            <p>As a student, he joined the internship program at Central Veterinary Clinic - Sofia. After graduating, he continued
+            working at the clinic, focusing on the “Diagnostic Imaging” department. In 2019, he became the head physician of the
+            “Diagnostic Imaging” unit.
+            He is currently enrolled in a diagnostic imaging specialization program at the University of Luxembourg, which will
+            conclude in 2026. Dr. Stoynov has attended numerous courses both locally and abroad. He is a member of the European
+            Association of Veterinary Diagnostic Imaging and a full member of the German organization for the control of hereditary
+            orthopedic diseases (GRSK). This organization, authorized by the FCI (Fédération Cynologique Internationale), issues
+            certificates for hip and elbow dysplasia necessary for breeding pedigree animals.</p>
+
+            <p>Dr. Stoynov completed a one-month internship at San Marco Veterinary Clinic in Italy, the only veterinary clinic
+            equipped with a dual-source CT scanner. There, he trained under Giovanna Bertolini, Doctor Europaeus in Veterinary
+            Sciences and a leading specialist in CT diagnostics.</p>
+
+            <p>His clinical and scientific interests include computed tomography, particularly spinal diseases and congenital vascular
+            anomalies.</p>
+        </section>
+
+        <section class="container" id="prices">
+            <h2>Pricing and services</h2>
+            <ul>
+                <li>Interpretation of radiographs (single or multiple) - 50 BGN</li>
+                <li>Interpretation of regular CT scans - 150 BGN</li>
+                <li>Interpretation of CT scans with contrast - 200 BGN</li>
+                <li>Interpretation of MRI scans - 200 BGN</li>
+            </ul>
+        </section>
+
+        <section class="container" id="terms">
+            <h2>Terms and conditions</h2>
+            <ol>
+                <li>Reports are prepared within <b>three days</b> after a confirmed receipt of the request.
+                For urgent cases, please indicate this in your request.</li>
+                <li>All requests must be paid in advance via a bank transfer.</li>
+                <li>Note that <b>we don't accept requests for interpreting ultrasound images</b>. Ultrasound is a diagnostic method that heavily depends on the operator's skills and the technical specifications of the
+                equipment (a so-called "operator & machine-dependent" method). This makes interpreting ultrasound images more
+                challenging, increasing the risk of missing crucial information, which could lead to an incorrect diagnosis.</li>
+                <li>In addition to diagnostic imaging studies, you can send us all para-clinical tests, examination protocols, photos, and video materials that may aid in reaching a final diagnosis.</li>
+            </ol>
+        </section>
+
+        <section class="container" id="request">
+            <h2>Request a report</h2>
+
+            <div class="grid">
+                <form action="sent.html" method="post" name="request" netlify>
+                    <fieldset>
+                        <label>
+                            Full name:
+                            <input type="text" name="name" placeholder="Your full name..." required />
+                        </label>
+
+                        <label>
+                            Email address:
+                            <input type="email" name="email" placeholder="Your email address..." required />
+                        </label>
+
+                        <label>
+                            Contact phone (in international format):
+                            <input type="tel" name="phone" placeholder="+xxx xxx xxx" required />
+                        </label>
+
+                        <fieldset>
+                            <label>Service requested:</label>
+                            <label>
+                                <input type="radio" name="service" value="X-Ray" required />
+                                Interpretation of a <span>radiograph</span> (single or multiple) - 50 BGN
+                            </label>
+                            <label>
+                                <input type="radio" name="service" value="CT" required />
+                                Interpretation of a <span>regular CT scan</span> - 150 BGN
+                            </label>
+                            <label>
+                                <input type="radio" name="service" value="CT+C" required />
+                                Interpretation of a <span>CT scan with contrast</span> - 200 BGN
+                            </label>
+                            <label>
+                                <input type="radio" name="service" value="MRI" required />
+                                Interpretation of an <span>MRI scan</span> - 200 BGN
+                            </label>
+                        </fieldset>
+
+                        <label>
+                            WeTransfer link:
+                            <input type="url" name="files_url" placeholder="https://we.tl/..." required />
+                            <small>Open <a href="https://wetransfer.com/" rel="noreferrer,nofollow"
+                                    target="_blank">wetransfer.com</a>, choose the "Create link" option from the "More options" menu and set the expiration to 7 days.</small>
+                        </label>
+
+                        <label for="notes">Invoice details:</label>
+                        <textarea name="invoice_details" placeholder="Add your details here in case you need an invoice issued."></textarea>
+
+                        <label>
+                            <input type="checkbox" name="urgent" value="yes" />
+                            Urgent case?
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="terms" value="agreed" required />
+                            I agree to <a href="#terms">the terms of the service</a>.
+                        </label>
+
+                        <label for="notes">Additional information:</label>
+                        <textarea name="notes" id="notes" placeholder="Add here any additional information that might be relevant."></textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Send the request" />
+                </form>
+
+                <article>
+                    <p>To request an interpretation:</p>
+                    <ol>
+                        <li>Upload the files of the diagnostic imagery to <a href="https://wetransfer.com/"
+                                target="_blank" rel="noreferrer,nofollow">wetransfer.com</a> where you have to choose the "Create link" option from the "More options" menu and to set the expiration to 7 days.</li>
+                        <li>Fill in the "Request report" form with the relevant details and the WeTransfer link obtained from the previous step and submit it.</li>
+                        <li>
+                            Pay the applicable service fee via a bank transfer to the following account:
+                            <ul>
+                                <li>Recipient: <code>Bulgarian Veterinary Radiology</code></li>
+                                <li>Address: <code>21 Kozyak street, Sofia, Bulgaria</code></li>
+                                <li>IBAN: <code>BG17UBBS80021069884150</code></li>
+                                <li>BIC: <code>UBBSBGSF</code></li>
+                                <li>Bank: <code>United Bulgarian Bank</code></li>
+                                <li>Reason: <code id="reason">the name of the service you chose</code></li>
+                            </ul>
+                        </li>
+                        <li>We'll reach out to you to share the final report.</li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer id="contacts">
+        <div class="container">
+            <p>
+                <a href="mailto:office@vetradiology.eu">Email</a> |
+                <a href="https://www.facebook.com/BulVetRad">Facebook</a>
+            </p>
+            <p>
+                Bulgarian Veterinary Radiology Ltd.<br>
+                IBAN: BG17UBBS80021069884150<br>
+                VAT number: BG208040842<br>
+                21 Kozyak street, Sofia, Bulgaria<br>
+            </p>
+            <p>&copy; 2019 - 2025</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        document.querySelectorAll('input[name="service"]').forEach(function (input) {
+            input.addEventListener('change', function () {
+                document.getElementById('reason').textContent = this.nextElementSibling.textContent;
+            });
+        });
+    </script>
+</body>
+
+</html>

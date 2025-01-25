@@ -1,0 +1,46 @@
+body>header {
+    background-image: url("stoynov-3-blur.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+body>footer {
+    background-image: url("stoynov-3-blur.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+body>footer p {
+    color: #7c7b7b;
+    font-size: 0.8rem;
+    text-align: center;
+    text-shadow: #fff 0 0 5px;
+}
+
+body>footer p a {
+    color: #03003b98;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: calc(var(--pico-spacing) * 3) calc(var(--pico-spacing) * 5);
+}
+
+@media screen and (max-width: 500px) {
+    #hero {
+        padding: calc(var(--pico-spacing) * 2) calc(var(--pico-spacing) * 1);
+    }
+
+}

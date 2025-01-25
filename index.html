@@ -6,53 +6,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Българска ветеринарна радиология</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <style type="text/css">
-        body > header {
-            background-image: url("stoynov-3-blur.jpg");
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-        
-        body > footer {
-            background-image: url("stoynov-3-blur.jpg");
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-
-        body > footer p {
-            color: #7c7b7b;
-            font-size: 0.8rem;
-            text-align: center;
-            text-shadow: #fff 0 0 5px;
-        }
-        body > footer p a {
-            color: #03003b98;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid rgba(0, 0, 0, 0.6);
-        }
-
-        #hero {
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: calc(var(--pico-spacing) * 3) calc(var(--pico-spacing) * 5);
-        }
-
-        @media screen and (max-width: 500px) {
-            #hero {
-                padding: calc(var(--pico-spacing) * 2) calc(var(--pico-spacing) * 1);
-            }
-            
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
@@ -61,9 +15,10 @@
                 <li><a href="/"><img src="bvr.jpg" alt="Българска ветеринарна радиология" class="logo"></a></li>
             </ul>
             <ul>
-                <li><a href="/#team">Екип</a></li>
-                <li><a href="/#prices">Цени</a></li>
-                <li><a href="/#request" role="button" class="secondary">Заявете разчитане</a></li>
+                <li><a href="#team">Екип</a></li>
+                <li><a href="#prices">Цени</a></li>
+                <li><a href="#request" role="button" class="secondary">Заявете разчитане</a></li>
+                <li><a href="en">EN</a></li>
             </ul>
         </nav>
     </header>
@@ -178,6 +133,9 @@
                                 rel="noreferrer,nofollow" target="_blank">wetransfer.com</a>, изберете от менюто "More options" опцията "Create link" и посочете валидност от 7 дни.</small>
                         </label>
     
+                        <label for="notes">Данни за фактура:</label>
+                        <textarea name="invoice_details" placeholder="В случай, че желаете фактура, попълнете Вашите данни тук."></textarea>
+
                         <label>
                             <input type="checkbox" name="urgent" value="yes" />
                             Спешен случай?
@@ -229,7 +187,7 @@
                 ЕИК/ЗДДС №: BG208040842<br>
                 София, ул. Козяк 21<br>
             </p>
-            <p>&copy; 2019 - 2024</p>
+            <p>&copy; 2019 - 2025</p>
         </div>
     </footer>
     <script type="text/javascript">
