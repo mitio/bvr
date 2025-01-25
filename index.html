@@ -7,6 +7,7 @@
     <title>Българска ветеринарна радиология</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -90,7 +91,14 @@
 
             <div class="grid">
                 <form action="/sent.html" method="post" name="request" netlify>
+                    <input type="hidden" name="subject" value="Заявка за разчитане" id="subject" />
                     <fieldset>
+                        <label>
+                            Номер на заявка:
+                            <input type="text" name="id" id="request-id" value="" readonly />
+                            <small>Укажете този номер в "Основание" на банковия превод.</small>
+                        </label>
+
                         <label>
                             Вашите имена:
                             <input type="text" name="name" placeholder="Име и фамилия..." required />
@@ -166,7 +174,7 @@
                                 <li>IBAN: <code>BG17UBBS80021069884150</code></li>
                                 <li>BIC: <code>UBBSBGSF</code></li>
                                 <li>При банка: <code>Обединена българска банка</code></li>
-                                <li>Основание: <code id="reason">избранта от вас услуга</code></li>
+                                <li>Основание: <code id="reason">номера на вашата заявка</code></li>
                             </ul>
                         </li>
                         <li>Ние ще се свържем с Вас, за да ви предоставим резултатите от разчитането.</li>
@@ -196,12 +204,5 @@
             </p>
         </div>
     </footer>
-    <script type="text/javascript">
-        document.querySelectorAll('input[name="service"]').forEach(function (input) {
-            input.addEventListener('change', function () {
-                document.getElementById('reason').textContent = this.nextElementSibling.textContent;
-            });
-        });
-    </script>
 </body>
 </html>

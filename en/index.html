@@ -8,6 +8,7 @@
     <title>Bulgarian Veterinary Radiology</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="/script.js" defer></script>
 </head>
 
 <body>
@@ -106,7 +107,14 @@
 
             <div class="grid">
                 <form action="sent.html" method="post" name="request" netlify>
+                    <input type="hidden" name="subject" value="Report request" id="subject" />
                     <fieldset>
+                        <label>
+                            Request ID:
+                            <input type="text" name="id" id="request-id" value="" readonly />
+                            <small>Please put this number in the "Reason" field in your bank transfer.</small>
+                        </label>
+
                         <label>
                             Full name:
                             <input type="text" name="name" placeholder="Your full name..." required />
@@ -183,7 +191,7 @@
                                 <li>IBAN: <code>BG17UBBS80021069884150</code></li>
                                 <li>BIC: <code>UBBSBGSF</code></li>
                                 <li>Bank: <code>United Bulgarian Bank</code></li>
-                                <li>Reason: <code id="reason">the name of the service you chose</code></li>
+                                <li>Reason: <code id="reason">your request ID</code></li>
                             </ul>
                         </li>
                         <li>We'll reach out to you to share the final report.</li>
@@ -213,12 +221,5 @@
             </p>
         </div>
     </footer>
-    <script type="text/javascript">
-        document.querySelectorAll('input[name="service"]').forEach(function (input) {
-            input.addEventListener('change', function () {
-                document.getElementById('reason').textContent = this.nextElementSibling.textContent;
-            });
-        });
-    </script>
 </body>
 </html>
