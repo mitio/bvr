@@ -38,6 +38,18 @@ body>footer p a {
     padding: calc(var(--pico-spacing) * 3) calc(var(--pico-spacing) * 5);
 }
 
+#hero .call-to-action {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#hero .call-to-action a[role="button"] {
+    flex-shrink: 0;
+}
+
 .flag {
     width: 1.5rem;
     height: 1.5rem;
@@ -49,4 +61,8 @@ body>footer p a {
         padding: calc(var(--pico-spacing) * 2) calc(var(--pico-spacing) * 1);
     }
 
+    #hero .call-to-action {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
