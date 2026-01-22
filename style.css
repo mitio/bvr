@@ -1,8 +1,22 @@
+:root { --container-width: 90vw; }
+@media (min-width: 576px) { :root { --container-width: 510px; } }
+@media (min-width: 768px) { :root { --container-width: 700px; } }
+@media (min-width: 1024px) { :root { --container-width: 950px; } }
+@media (min-width: 1280px) { :root { --container-width: 1200px; } }
+@media (min-width: 1536px) { :root { --container-width: 1450px; } }
+
 body>header {
-    background-image: url("stoynov-3-blur.jpg");
-    background-size: cover;
-    background-position: top center;
+    background-image: url("cover-image.png");
+    background-size: auto 100%;
+    background-position-x: calc(((100vw - var(--container-width)) / 2) - 250px);
+    background-position-y: center;
     background-repeat: no-repeat;
+    background-color: #A0DAF6;
+}
+
+header ul li a:not([role="button"]) {
+    color: var(--pico-secondary-background);
+    text-shadow: #fff 1px 1px 0px, #fff -1px 1px 0px, #fff 1px -1px 0px, #fff -1px -1px 0px;
 }
 
 body>footer {
@@ -28,6 +42,7 @@ body>footer p a {
     height: 50px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.6);
+    visibility: hidden;
 }
 
 #hero {
